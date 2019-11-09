@@ -2,9 +2,9 @@ import math
 def area(n,a):
     area = (a**2 * n )/4* math.tan(math.pi/n)
     return area
-print(str(area(4,2)))
-print(str(area(3,2)))
-print(str(area(6,2)))
+#print(str(area(4,2)))
+#print(str(area(3,2)))
+#print(str(area(6,2)))
 
 def is_leap_year (y):
     if (y % 4) == 0 :
@@ -18,8 +18,8 @@ def is_leap_year (y):
     else:
         return False 
 
-print(str(is_leap_year(2000)))
-print(str(is_leap_year(1900)))
+#print(str(is_leap_year(2000)))
+#print(str(is_leap_year(1900)))
 
 def cake(m , f, s):
     mf = f // 2
@@ -27,23 +27,26 @@ def cake(m , f, s):
     ms = s // 1.5
 
     return min(mf,mm, ms)
-print(str(cake(5, 7, 3.5)))
+#print(str(cake(5, 7, 3.5)))
 
 
 
 def is_prime (n):
     i = 2
-    while i <= n  :
-        if (n % i) == 0 :
-            return (False)
-            break
-        elif n % i != 0 and i == n-1:
-            return True
-            break
-        else :
-            i+=1
-print (is_prime(17))
-print (is_prime(16))
+    if n == 2 :
+        return True
+    else: 
+        while i <= n  :
+            if (n % i) == 0 :
+                return (False)
+                break
+            elif n % i != 0 and i == n-1:
+                return True
+                break
+            else :
+                i+=1
+#print (is_prime(17))
+#print (is_prime(16))
 
 def nth_prime (n):
     if n == 1:
@@ -58,7 +61,7 @@ def nth_prime (n):
         
         i+=2
     
-print(str(nth_prime(10))) 
+#print(str(nth_prime(10))) 
 
 
 def next_prime(n):
@@ -69,4 +72,4 @@ def next_prime(n):
         else :
             i+=2
     return i  
-print (str(next_prime(20)))
+#print (str(next_prime(20)))
