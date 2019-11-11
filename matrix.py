@@ -10,3 +10,11 @@ def identity(n):
                 line.append(0)
     print(matrix)
 identity(3)
+
+def transpose(mat):
+    trans = matrix_fcn(len(mat[0]), len(mat))
+    for i in range (len(mat)):  
+       for j in range (len(mat[i])):
+            trans[j][i] = mat[i][j]
+    print(trans)
+transpose([[1, 2], [3, 4], [5,6]])
