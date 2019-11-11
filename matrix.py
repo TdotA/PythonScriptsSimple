@@ -52,7 +52,7 @@ def multiply_mat(mat1, mat2):
     for i in range (max(len(mat1), len(mat2))):
         print(i)
         for j in range(min(len(mat1[i]), len(mat2[i]))):
-            result[i][j]= mat1[i][j]*mat2[i][j] + mat1[i][j+1]*mat2[i][j+1]
+            
     return result
 print(multiply_mat([[1, 2], [3, 4]], [[0, 1], [0, 0]]))
 #    [[0, 1], [0, 3]]
