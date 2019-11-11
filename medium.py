@@ -37,10 +37,8 @@ def amicable(num) :
         else: 
             pass
         i = i+1
-print(amicable(10000))
+#print(amicable(10000))
 
-
-print(after - now)
 
 def list_to_str (lists): #utility function
     string = ''
@@ -63,12 +61,13 @@ def auto_numbering(s) :
 
 def multiplication_table(num):
     for i in range(1, num+1):
-        print('\n')
+        if i >= 2 :
+            print('\n')
         for j in range (1, (num + 1)):
             print(i*j, end=' ')
             j = j+1
         i=i+1
-#multiplication_table(5)
+multiplication_table(25)
 
 def All_Alphabetical (string):
     new = ""

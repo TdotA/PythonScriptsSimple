@@ -25,21 +25,16 @@ def digit_sum(num):
 #print(digit_sum(2013)) 
 
 def hand_angle(h, m):
-    
-    if h > 12:
-        h1 = (h - 12) * 5
-    else :
-        h1 = h * 5 
+    h1= (h % 12) * 5
     if h1 > m :
-        angle1 = (h1 - m + m/60) * 6 
-        angle2 = (m + 60-h1 - m/60) * 6 
-        angle_min = min(angle1, angle2)
+        angle1 = (h1 - m + m/12) * 6 
+        angle2 = (m + 60-h1 - m/12) * 6 
     else: 
-        angle1 = (m -h1 - m/60) * 6 
-        angle2 = (h1 +  60-m + m/60) * 6
-        angle_min = min(angle1, angle2)
+        angle1 = (m -h1 - m/12) * 6 
+        angle2 = (h1 +  60-m + m/12) * 6
         pass
-    return math.floor(angle_min) ,  (angle_min-math.floor(angle_min)) * 60
+    angle_min = min(angle1, angle2)
+    return angle_min // 1, (angle_min % 1)*60 
 print(hand_angle(17, 47))
 
 
