@@ -67,7 +67,7 @@ def multiplication_table(num):
             print(i*j, end=' ')
             j = j+1
         i=i+1
-multiplication_table(25)
+#multiplication_table(0)
 
 def All_Alphabetical (string):
     new = ""

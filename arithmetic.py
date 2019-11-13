@@ -35,7 +35,7 @@ def hand_angle(h, m):
         pass
     angle_min = min(angle1, angle2)
     return angle_min // 1, (angle_min % 1)*60 
-print(hand_angle(17, 47))
+#print(hand_angle(17, 47))
 
 
 
