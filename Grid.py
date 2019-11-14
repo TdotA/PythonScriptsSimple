@@ -63,10 +63,34 @@ def final_ant(grid, p, s):
             pass
     return p1[0],p1[1]
 x = load_grid('grid.txt')
-print(final_ant(x, (3,3), 'LR'))
+#print(final_ant(x, (3,3), 'LR'))
 
 def initial_ant(grid, p, s):
     return None
 
 def reduce_steps(grid, p, s):
-    return None
+    for element in grid:
+        grid[grid.index(element)] = list(element)
+    p1 = list(p)
+    s1 = list(s)
+    for c in s1: 
+        if c == 'L' and grid[p1[0]][p1[1]-1] != '#':
+            p1[1] = p1[1] - 1
+        elif c == 'L' and grid[p1[0]][p1[1]-1] == '#':
+            s1 = s1 - s1[s1.index(c)]
+        elif c == 'U' and grid[p1[0]-1][p1[1]] != '#' :
+            p1[0] = p1[0]+1
+        elif c == 'U' and grid[p1[0]-1][p1[1]] == '#' :
+            s1 = s1 - s1[s1.index(c)]
+        elif c == 'R' and grid[p1[0]][p1[1]+1] != '#' :
+            p1[1]=p1[1]+1
+        elif c == 'R' and grid[p1[0]][p1[1]+1] == '#' :
+            s1 = s1 - s1[s1.index(c)]
+        elif c == 'D' and grid[p1[0]+1][p1[1]] != '#' :
+            p1[0] = p1[0]+1
+        elif c == 'D' and grid[p1[0]+1][p1[1]] == '#' :
+            s1 = s1 - s1[s1.index(c)]
+    return ''.join(s1)
+x = load_grid('grid.txt')
+print(reduce_steps(x,(3,3),'LR'))
+    
