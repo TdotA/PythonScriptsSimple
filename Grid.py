@@ -77,20 +77,20 @@ def reduce_steps(grid, p, s):
         if c == 'L' and grid[p1[0]][p1[1]-1] != '#':
             p1[1] = p1[1] - 1
         elif c == 'L' and grid[p1[0]][p1[1]-1] == '#':
-            s1 = s1 - s1[s1.index(c)]
+            del s1[s1.index(c)]
         elif c == 'U' and grid[p1[0]-1][p1[1]] != '#' :
             p1[0] = p1[0]+1
         elif c == 'U' and grid[p1[0]-1][p1[1]] == '#' :
-            s1 = s1 - s1[s1.index(c)]
+            del s1[s1.index(c)]
         elif c == 'R' and grid[p1[0]][p1[1]+1] != '#' :
             p1[1]=p1[1]+1
         elif c == 'R' and grid[p1[0]][p1[1]+1] == '#' :
-            s1 = s1 - s1[s1.index(c)]
+            del s1[s1.index(c)]
         elif c == 'D' and grid[p1[0]+1][p1[1]] != '#' :
             p1[0] = p1[0]+1
         elif c == 'D' and grid[p1[0]+1][p1[1]] == '#' :
-            s1 = s1 - s1[s1.index(c)]
+            del s1[s1.index(c)]
     return ''.join(s1)
 x = load_grid('grid.txt')
-print(reduce_steps(x,(3,3),'LR'))
+print(reduce_steps(x,(3,3),'LLLLLLLLL'))
     
