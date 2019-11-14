@@ -1,24 +1,16 @@
-i = 1
-c = '012'
-def toString(List): 
-	return ''.join(List)
-
-def permute (s, f, l):
-    b =[]
-    if l==f: 
-        b = b.append(toString(s))
-        print(b[3])
-            
-    else: 
-        for i in xrange(f, l+1):
-
-            s[f], s[i] = s[i], s[f]
-            permute(s, f+1, l)
-            s[f], s[i] = s[i], s[f]
-        
-        
+def permute_string(str):
+    if len(str) == 0:
+	    return ['']
+    prev_list = permute_string(str[1:len(str)])
+    next_list = []
+    for i in range(0,len(prev_list)):
+        for j in range(0,len(str)):
+            new_str = prev_list[i][0:j]+str[0]+prev_list[i][j:len(str)-1]
+            if new_str not in next_list:
+                next_list.append(new_str)
+    return next_list
+	
+print(permute_string('ABCD'));        
         
     
-a = list(c)
-n = len(c)
-permute(a, 0, n-1)
+
