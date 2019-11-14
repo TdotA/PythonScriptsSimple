@@ -9,10 +9,10 @@ def permute_string(str):
             if new_str not in next_list:
                 next_list.append(new_str)
     return next_list
-print  (permute_string('ab'))
+
 def all_expressions(n):
     list_n = []
-    for i in range (0, n):
+    for i in range (0, n+1):
         line =''
         line = line + i*')' + (n-i) * '('
         list_n.append(line)
@@ -21,7 +21,7 @@ def all_expressions(n):
         list_f = list_f + permute_string(element)
     return list_f
 
-#print(all_expressions(5))
+print(all_expressions(3))
 
 def is_validly_nested(string): 
     sub = '()'
@@ -67,4 +67,4 @@ def valid_level (n,k):
         else: 
             pass
     return final
-print(valid_level(6,2))
+#print(valid_level(6,2))

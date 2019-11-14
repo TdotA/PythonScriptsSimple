@@ -35,8 +35,8 @@ def pseudo_palindrome(s):
             return True
         else:
             for char in s:
-                n = s.replace(char, c)
-                x= s.replace(char, '')
+                replaced = s.replace(char, c)
+                deleted = s.replace(char, '')
                 index = list_s.index(char)
                 list_s = list_s.insert(index, c)
                 y = y + list_s
