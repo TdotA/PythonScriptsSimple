@@ -36,7 +36,7 @@ def is_prime (n):
     if n == 2 :
         return True
     else: 
-        while i <= n  :
+        while i <= math.floor(math.sqrt(n))  :
             if (n % i) == 0 :
                 return (False)
                 break
